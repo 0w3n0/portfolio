@@ -1,0 +1,984 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+:root {
+  --var: blue;
+  --bleu: #9ca9bf;
+  --rouge: ghostwhite;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #efede1;
+  color: #7b7e81;
+  margin: 0;
+  min-height: 100vh;
+  /* Permet un défilement suffisant pour l'exemple */
+}
+
+.p-pres {
+  color: ghostwhite;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: "panamerabold";
+  text-align: center;
+  margin: 10vw 20vw 0;
+}
+
+h1 {
+  font-family: "panamerabold";
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-family: "panamerathin";
+  font-size: 1.5rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #374151;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.box1 {
+  background-color: #3498db;
+}
+
+.box2 {
+  background-color: var(--bleu);
+}
+
+@keyframes changeColor {
+  0% {
+    background-color: var(--couleur1);
+  }
+  49.99% {
+    background-color: var(--couleur1);
+    /* Couleur de départ pour box2 */
+  }
+  50% {
+    background-color: var(--couleur2);
+    /* Couleur de départ pour box2 */
+  }
+  90% {
+    background-color: var(--couleur2);
+  }
+  99% {
+    background-color: var(--couleur2);
+  }
+  100% {
+    background-color: var(--couleur1);
+    /* Couleur de départ pour box1 */
+  }
+}
+@keyframes bordercling {
+  0% {
+    border: 3px solid transparent;
+  }
+  5% {
+    border: 3px solid #374151;
+  }
+  10% {
+    border: 3px solid transparent;
+  }
+  15% {
+    border: 3px solid #374151;
+  }
+  20% {
+    border: 3px solid transparent;
+  }
+  25% {
+    border: 3px solid #374151;
+  }
+  30% {
+    border: 3px solid transparent;
+  }
+  35% {
+    border: 3px solid #374151;
+  }
+  40% {
+    border: 3px solid transparent;
+  }
+  45% {
+    border: 3px solid #374151;
+  }
+  50% {
+    border: 3px solid transparent;
+  }
+  100% {
+    border: 3px solid transparent;
+  }
+}
+@keyframes bordercling2 {
+  0% {
+    /* animation: borderClignote 5s infinite; */
+    border: 3px solid #374151;
+  }
+  50% {
+    /* animation: none; */
+  }
+  100% {
+    /* animation: none; */
+  }
+}
+@keyframes borderClignote2 {
+  0% {
+    border: 3px solid transparent;
+  }
+  100% {
+    border: 3px solid #374151;
+  }
+}
+@keyframes borderNone {
+  0% {
+    border: 3px solid;
+  }
+  100% {
+    border: none;
+  }
+  100% {
+    border: none;
+  }
+}
+.first-btn, .second-btn, .first-btn-r, .second-btn-r, .third-btn-r {
+  width: 40vw;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.first-btn-r, .second-btn-r, .third-btn-r {
+  background-color: ghostwhite;
+}
+
+.first-btn {
+  --couleur1: var(--bleu);
+  --couleur2: var(--rouge);
+  animation: changeColor 10s infinite, bordercling 10s infinite steps(1);
+  /* bordercling 10s infinite steps(1) */
+}
+
+.second-btn {
+  --couleur1: var(--rouge);
+  --couleur2: var(--bleu);
+  animation: changeColor 10s infinite, bordercling 10s infinite 5s steps(1);
+}
+
+.input-wrapper {
+  display: flex;
+  font-family: monospace;
+  font-size: 125%;
+  width: 70%;
+  flex-direction: column-reverse;
+}
+.input-wrapper > input,
+.input-wrapper > .placeholder {
+  display: block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+.input-wrapper > .placeholder {
+  pointer-events: none;
+}
+.input-wrapper > .placeholder::before {
+  content: "​";
+  content: "​"/"Web designer";
+  alt: "Web designer";
+  white-space: break-spaces;
+  will-change: content;
+  animation: typed-0 11.49s linear 1s infinite forwards;
+}
+.input-wrapper > .placeholder::after {
+  content: "​";
+  position: relative;
+  display: inline-block;
+  padding-right: 2px;
+  border-right: 2px solid currentColor;
+  white-space: nowrap;
+  animation: typed-0-caret 0.75s linear 1s infinite forwards;
+}
+@keyframes typed-0 {
+  0%, 0.4341610096% {
+    content: "​W";
+    content: "​W"/"Web designer";
+    alt: "Web designer";
+  }
+  0.4351610096%, 0.8693220191% {
+    content: "​We";
+    content: "​We"/"Web designer";
+    alt: "Web designer";
+  }
+  0.8703220191%, 1.3044830287% {
+    content: "​Web";
+    content: "​Web"/"Web designer";
+    alt: "Web designer";
+  }
+  1.3054830287%, 1.7396440383% {
+    content: "​Web ";
+    content: "​Web "/"Web designer";
+    alt: "Web designer";
+  }
+  1.7406440383%, 2.1748050479% {
+    content: "​Web d";
+    content: "​Web d"/"Web designer";
+    alt: "Web designer";
+  }
+  2.1758050479%, 2.6099660574% {
+    content: "​Web de";
+    content: "​Web de"/"Web designer";
+    alt: "Web designer";
+  }
+  2.6109660574%, 3.045127067% {
+    content: "​Web des";
+    content: "​Web des"/"Web designer";
+    alt: "Web designer";
+  }
+  3.046127067%, 3.4802880766% {
+    content: "​Web desi";
+    content: "​Web desi"/"Web designer";
+    alt: "Web designer";
+  }
+  3.4812880766%, 3.9154490862% {
+    content: "​Web desig";
+    content: "​Web desig"/"Web designer";
+    alt: "Web designer";
+  }
+  3.9164490862%, 4.3506100957% {
+    content: "​Web design";
+    content: "​Web design"/"Web designer";
+    alt: "Web designer";
+  }
+  4.3516100957%, 4.7857711053% {
+    content: "​Web designe";
+    content: "​Web designe"/"Web designer";
+    alt: "Web designer";
+  }
+  4.7867711053%, 14.272281114% {
+    content: "​Web designer";
+    content: "​Web designer"/"Web designer";
+    alt: "Web designer";
+  }
+  14.273281114%, 14.6204099217% {
+    content: "​Web designe";
+    content: "​Web designe"/"Web designer";
+    alt: "Web designer";
+  }
+  14.6214099217%, 14.9685387293% {
+    content: "​Web design";
+    content: "​Web design"/"Web designer";
+    alt: "Web designer";
+  }
+  14.9695387293%, 15.316667537% {
+    content: "​Web desig";
+    content: "​Web desig"/"Web designer";
+    alt: "Web designer";
+  }
+  15.317667537%, 15.6647963446% {
+    content: "​Web desi";
+    content: "​Web desi"/"Web designer";
+    alt: "Web designer";
+  }
+  15.6657963446%, 16.0129251523% {
+    content: "​Web des";
+    content: "​Web des"/"Web designer";
+    alt: "Web designer";
+  }
+  16.0139251523%, 16.36105396% {
+    content: "​Web de";
+    content: "​Web de"/"Web designer";
+    alt: "Web designer";
+  }
+  16.36205396%, 16.7091827676% {
+    content: "​Web d";
+    content: "​Web d"/"Web designer";
+    alt: "Web designer";
+  }
+  16.7101827676%, 17.0573115753% {
+    content: "​Web ";
+    content: "​Web "/"Web designer";
+    alt: "Web designer";
+  }
+  17.0583115753%, 17.4054403829% {
+    content: "​Web";
+    content: "​Web"/"Web designer";
+    alt: "Web designer";
+  }
+  17.4064403829%, 17.7535691906% {
+    content: "​We";
+    content: "​We"/"Web designer";
+    alt: "Web designer";
+  }
+  17.7545691906%, 18.1016979983% {
+    content: "​W";
+    content: "​W"/"Web designer";
+    alt: "Web designer";
+  }
+  18.1026979983%, 22.453308094% {
+    content: "​";
+    content: "​"/"Web designer";
+    alt: "Web designer";
+  }
+  22.454308094%, 22.8884691036% {
+    content: "​G";
+    content: "​G"/"Web designer";
+    alt: "Web designer";
+  }
+  22.8894691036%, 23.3236301131% {
+    content: "​Ga";
+    content: "​Ga"/"Web designer";
+    alt: "Web designer";
+  }
+  23.3246301131%, 23.7587911227% {
+    content: "​Gam";
+    content: "​Gam"/"Web designer";
+    alt: "Web designer";
+  }
+  23.7597911227%, 24.1939521323% {
+    content: "​Game";
+    content: "​Game"/"Web designer";
+    alt: "Web designer";
+  }
+  24.1949521323%, 24.6291131419% {
+    content: "​Game ";
+    content: "​Game "/"Web designer";
+    alt: "Web designer";
+  }
+  24.6301131419%, 25.0642741514% {
+    content: "​Game d";
+    content: "​Game d"/"Web designer";
+    alt: "Web designer";
+  }
+  25.0652741514%, 25.499435161% {
+    content: "​Game de";
+    content: "​Game de"/"Web designer";
+    alt: "Web designer";
+  }
+  25.500435161%, 25.9345961706% {
+    content: "​Game dev";
+    content: "​Game dev"/"Web designer";
+    alt: "Web designer";
+  }
+  25.9355961706%, 26.3697571802% {
+    content: "​Game deve";
+    content: "​Game deve"/"Web designer";
+    alt: "Web designer";
+  }
+  26.3707571802%, 26.8049181897% {
+    content: "​Game devel";
+    content: "​Game devel"/"Web designer";
+    alt: "Web designer";
+  }
+  26.8059181897%, 27.2400791993% {
+    content: "​Game develo";
+    content: "​Game develo"/"Web designer";
+    alt: "Web designer";
+  }
+  27.2410791993%, 27.6752402089% {
+    content: "​Game develop";
+    content: "​Game develop"/"Web designer";
+    alt: "Web designer";
+  }
+  27.6762402089%, 28.1104012185% {
+    content: "​Game develope";
+    content: "​Game develope"/"Web designer";
+    alt: "Web designer";
+  }
+  28.1114012185%, 37.5969112272% {
+    content: "​Game developer";
+    content: "​Game developer"/"Web designer";
+    alt: "Web designer";
+  }
+  37.5979112272%, 37.9450400348% {
+    content: "​Game develope";
+    content: "​Game develope"/"Web designer";
+    alt: "Web designer";
+  }
+  37.9460400348%, 38.2931688425% {
+    content: "​Game develop";
+    content: "​Game develop"/"Web designer";
+    alt: "Web designer";
+  }
+  38.2941688425%, 38.6412976501% {
+    content: "​Game develo";
+    content: "​Game develo"/"Web designer";
+    alt: "Web designer";
+  }
+  38.6422976501%, 38.9894264578% {
+    content: "​Game devel";
+    content: "​Game devel"/"Web designer";
+    alt: "Web designer";
+  }
+  38.9904264578%, 39.3375552654% {
+    content: "​Game deve";
+    content: "​Game deve"/"Web designer";
+    alt: "Web designer";
+  }
+  39.3385552654%, 39.6856840731% {
+    content: "​Game dev";
+    content: "​Game dev"/"Web designer";
+    alt: "Web designer";
+  }
+  39.6866840731%, 40.0338128808% {
+    content: "​Game de";
+    content: "​Game de"/"Web designer";
+    alt: "Web designer";
+  }
+  40.0348128808%, 40.3819416884% {
+    content: "​Game d";
+    content: "​Game d"/"Web designer";
+    alt: "Web designer";
+  }
+  40.3829416884%, 40.7300704961% {
+    content: "​Game ";
+    content: "​Game "/"Web designer";
+    alt: "Web designer";
+  }
+  40.7310704961%, 41.0781993037% {
+    content: "​Game";
+    content: "​Game"/"Web designer";
+    alt: "Web designer";
+  }
+  41.0791993037%, 41.4263281114% {
+    content: "​Gam";
+    content: "​Gam"/"Web designer";
+    alt: "Web designer";
+  }
+  41.4273281114%, 41.7744569191% {
+    content: "​Ga";
+    content: "​Ga"/"Web designer";
+    alt: "Web designer";
+  }
+  41.7754569191%, 42.1225857267% {
+    content: "​G";
+    content: "​G"/"Web designer";
+    alt: "Web designer";
+  }
+  42.1235857267%, 46.4741958225% {
+    content: "​";
+    content: "​"/"Web designer";
+    alt: "Web designer";
+  }
+  46.4751958225%, 46.909356832% {
+    content: "​W";
+    content: "​W"/"Web designer";
+    alt: "Web designer";
+  }
+  46.910356832%, 47.3445178416% {
+    content: "​We";
+    content: "​We"/"Web designer";
+    alt: "Web designer";
+  }
+  47.3455178416%, 47.7796788512% {
+    content: "​Web";
+    content: "​Web"/"Web designer";
+    alt: "Web designer";
+  }
+  47.7806788512%, 48.2148398607% {
+    content: "​Web ";
+    content: "​Web "/"Web designer";
+    alt: "Web designer";
+  }
+  48.2158398607%, 48.6500008703% {
+    content: "​Web d";
+    content: "​Web d"/"Web designer";
+    alt: "Web designer";
+  }
+  48.6510008703%, 49.0851618799% {
+    content: "​Web de";
+    content: "​Web de"/"Web designer";
+    alt: "Web designer";
+  }
+  49.0861618799%, 49.5203228895% {
+    content: "​Web dev";
+    content: "​Web dev"/"Web designer";
+    alt: "Web designer";
+  }
+  49.5213228895%, 49.955483899% {
+    content: "​Web deve";
+    content: "​Web deve"/"Web designer";
+    alt: "Web designer";
+  }
+  49.956483899%, 50.3906449086% {
+    content: "​Web devel";
+    content: "​Web devel"/"Web designer";
+    alt: "Web designer";
+  }
+  50.3916449086%, 50.8258059182% {
+    content: "​Web develo";
+    content: "​Web develo"/"Web designer";
+    alt: "Web designer";
+  }
+  50.8268059182%, 51.2609669278% {
+    content: "​Web develop";
+    content: "​Web develop"/"Web designer";
+    alt: "Web designer";
+  }
+  51.2619669278%, 51.6961279373% {
+    content: "​Web develope";
+    content: "​Web develope"/"Web designer";
+    alt: "Web designer";
+  }
+  51.6971279373%, 61.182637946% {
+    content: "​Web developer";
+    content: "​Web developer"/"Web designer";
+    alt: "Web designer";
+  }
+  61.183637946%, 61.5307667537% {
+    content: "​Web develope";
+    content: "​Web develope"/"Web designer";
+    alt: "Web designer";
+  }
+  61.5317667537%, 61.8788955614% {
+    content: "​Web develop";
+    content: "​Web develop"/"Web designer";
+    alt: "Web designer";
+  }
+  61.8798955614%, 62.227024369% {
+    content: "​Web develo";
+    content: "​Web develo"/"Web designer";
+    alt: "Web designer";
+  }
+  62.228024369%, 62.5751531767% {
+    content: "​Web devel";
+    content: "​Web devel"/"Web designer";
+    alt: "Web designer";
+  }
+  62.5761531767%, 62.9232819843% {
+    content: "​Web deve";
+    content: "​Web deve"/"Web designer";
+    alt: "Web designer";
+  }
+  62.9242819843%, 63.271410792% {
+    content: "​Web dev";
+    content: "​Web dev"/"Web designer";
+    alt: "Web designer";
+  }
+  63.272410792%, 63.6195395997% {
+    content: "​Web de";
+    content: "​Web de"/"Web designer";
+    alt: "Web designer";
+  }
+  63.6205395997%, 63.9676684073% {
+    content: "​Web d";
+    content: "​Web d"/"Web designer";
+    alt: "Web designer";
+  }
+  63.9686684073%, 64.315797215% {
+    content: "​Web ";
+    content: "​Web "/"Web designer";
+    alt: "Web designer";
+  }
+  64.316797215%, 64.6639260226% {
+    content: "​Web";
+    content: "​Web"/"Web designer";
+    alt: "Web designer";
+  }
+  64.6649260226%, 65.0120548303% {
+    content: "​We";
+    content: "​We"/"Web designer";
+    alt: "Web designer";
+  }
+  65.0130548303%, 65.3601836379% {
+    content: "​W";
+    content: "​W"/"Web designer";
+    alt: "Web designer";
+  }
+  65.3611836379%, 69.7117937337% {
+    content: "​";
+    content: "​"/"Web designer";
+    alt: "Web designer";
+  }
+  69.7127937337%, 70.1469547433% {
+    content: "​W";
+    content: "​W"/"Web designer";
+    alt: "Web designer";
+  }
+  70.1479547433%, 70.5821157528% {
+    content: "​Wa";
+    content: "​Wa"/"Web designer";
+    alt: "Web designer";
+  }
+  70.5831157528%, 71.0172767624% {
+    content: "​Wan";
+    content: "​Wan"/"Web designer";
+    alt: "Web designer";
+  }
+  71.0182767624%, 71.452437772% {
+    content: "​Wann";
+    content: "​Wann"/"Web designer";
+    alt: "Web designer";
+  }
+  71.453437772%, 71.8875987815% {
+    content: "​Wanna";
+    content: "​Wanna"/"Web designer";
+    alt: "Web designer";
+  }
+  71.8885987815%, 72.3227597911% {
+    content: "​Wanna ";
+    content: "​Wanna "/"Web designer";
+    alt: "Web designer";
+  }
+  72.3237597911%, 72.7579208007% {
+    content: "​Wanna t";
+    content: "​Wanna t"/"Web designer";
+    alt: "Web designer";
+  }
+  72.7589208007%, 73.1930818103% {
+    content: "​Wanna ta";
+    content: "​Wanna ta"/"Web designer";
+    alt: "Web designer";
+  }
+  73.1940818103%, 73.6282428198% {
+    content: "​Wanna tak";
+    content: "​Wanna tak"/"Web designer";
+    alt: "Web designer";
+  }
+  73.6292428198%, 74.0634038294% {
+    content: "​Wanna take";
+    content: "​Wanna take"/"Web designer";
+    alt: "Web designer";
+  }
+  74.0644038294%, 74.498564839% {
+    content: "​Wanna take ";
+    content: "​Wanna take "/"Web designer";
+    alt: "Web designer";
+  }
+  74.499564839%, 74.9337258486% {
+    content: "​Wanna take a";
+    content: "​Wanna take a"/"Web designer";
+    alt: "Web designer";
+  }
+  74.9347258486%, 75.3688868581% {
+    content: "​Wanna take a ";
+    content: "​Wanna take a "/"Web designer";
+    alt: "Web designer";
+  }
+  75.3698868581%, 75.8040478677% {
+    content: "​Wanna take a l";
+    content: "​Wanna take a l"/"Web designer";
+    alt: "Web designer";
+  }
+  75.8050478677%, 76.2392088773% {
+    content: "​Wanna take a lo";
+    content: "​Wanna take a lo"/"Web designer";
+    alt: "Web designer";
+  }
+  76.2402088773%, 76.6743698869% {
+    content: "​Wanna take a loo";
+    content: "​Wanna take a loo"/"Web designer";
+    alt: "Web designer";
+  }
+  76.6753698869%, 77.1095308964% {
+    content: "​Wanna take a look";
+    content: "​Wanna take a look"/"Web designer";
+    alt: "Web designer";
+  }
+  77.1105308964%, 77.544691906% {
+    content: "​Wanna take a look ";
+    content: "​Wanna take a look "/"Web designer";
+    alt: "Web designer";
+  }
+  77.545691906%, 77.9798529156% {
+    content: "​Wanna take a look ?";
+    content: "​Wanna take a look ?"/"Web designer";
+    alt: "Web designer";
+  }
+  77.9808529156%, 78.4150139252% {
+    content: "​Wanna take a look ? ";
+    content: "​Wanna take a look ? "/"Web designer";
+    alt: "Web designer";
+  }
+  78.4160139252%, 78.8501749347% {
+    content: "​Wanna take a look ? :";
+    content: "​Wanna take a look ? :"/"Web designer";
+    alt: "Web designer";
+  }
+  78.8511749347%, 88.3366849434% {
+    content: "​Wanna take a look ? :)";
+    content: "​Wanna take a look ? :)"/"Web designer";
+    alt: "Web designer";
+  }
+  88.3376849434%, 88.6848137511% {
+    content: "​Wanna take a look ? :";
+    content: "​Wanna take a look ? :"/"Web designer";
+    alt: "Web designer";
+  }
+  88.6858137511%, 89.0329425587% {
+    content: "​Wanna take a look ? ";
+    content: "​Wanna take a look ? "/"Web designer";
+    alt: "Web designer";
+  }
+  89.0339425587%, 89.3810713664% {
+    content: "​Wanna take a look ?";
+    content: "​Wanna take a look ?"/"Web designer";
+    alt: "Web designer";
+  }
+  89.3820713664%, 89.7292001741% {
+    content: "​Wanna take a look ";
+    content: "​Wanna take a look "/"Web designer";
+    alt: "Web designer";
+  }
+  89.7302001741%, 90.0773289817% {
+    content: "​Wanna take a look";
+    content: "​Wanna take a look"/"Web designer";
+    alt: "Web designer";
+  }
+  90.0783289817%, 90.4254577894% {
+    content: "​Wanna take a loo";
+    content: "​Wanna take a loo"/"Web designer";
+    alt: "Web designer";
+  }
+  90.4264577894%, 90.773586597% {
+    content: "​Wanna take a lo";
+    content: "​Wanna take a lo"/"Web designer";
+    alt: "Web designer";
+  }
+  90.774586597%, 91.1217154047% {
+    content: "​Wanna take a l";
+    content: "​Wanna take a l"/"Web designer";
+    alt: "Web designer";
+  }
+  91.1227154047%, 91.4698442124% {
+    content: "​Wanna take a ";
+    content: "​Wanna take a "/"Web designer";
+    alt: "Web designer";
+  }
+  91.4708442124%, 91.81797302% {
+    content: "​Wanna take a";
+    content: "​Wanna take a"/"Web designer";
+    alt: "Web designer";
+  }
+  91.81897302%, 92.1661018277% {
+    content: "​Wanna take ";
+    content: "​Wanna take "/"Web designer";
+    alt: "Web designer";
+  }
+  92.1671018277%, 92.5142306353% {
+    content: "​Wanna take";
+    content: "​Wanna take"/"Web designer";
+    alt: "Web designer";
+  }
+  92.5152306353%, 92.862359443% {
+    content: "​Wanna tak";
+    content: "​Wanna tak"/"Web designer";
+    alt: "Web designer";
+  }
+  92.863359443%, 93.2104882507% {
+    content: "​Wanna ta";
+    content: "​Wanna ta"/"Web designer";
+    alt: "Web designer";
+  }
+  93.2114882507%, 93.5586170583% {
+    content: "​Wanna t";
+    content: "​Wanna t"/"Web designer";
+    alt: "Web designer";
+  }
+  93.5596170583%, 93.906745866% {
+    content: "​Wanna ";
+    content: "​Wanna "/"Web designer";
+    alt: "Web designer";
+  }
+  93.907745866%, 94.2548746736% {
+    content: "​Wanna";
+    content: "​Wanna"/"Web designer";
+    alt: "Web designer";
+  }
+  94.2558746736%, 94.6030034813% {
+    content: "​Wann";
+    content: "​Wann"/"Web designer";
+    alt: "Web designer";
+  }
+  94.6040034813%, 94.9511322889% {
+    content: "​Wan";
+    content: "​Wan"/"Web designer";
+    alt: "Web designer";
+  }
+  94.9521322889%, 95.2992610966% {
+    content: "​Wa";
+    content: "​Wa"/"Web designer";
+    alt: "Web designer";
+  }
+  95.3002610966%, 95.6473899043% {
+    content: "​W";
+    content: "​W"/"Web designer";
+    alt: "Web designer";
+  }
+  95.6483899043%, 100% {
+    content: "​";
+    content: "​"/"Web designer";
+    alt: "Web designer";
+  }
+}
+@keyframes typed-0-caret {
+  75% {
+    border-color: transparent;
+  }
+}
+.input-wrapper > input:focus + .placeholder, .input-wrapper > input:active + .placeholder {
+  display: none;
+}
+
+#test1 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  --bkg: #5eb3fd;
+  --white: #e7e6e6;
+  background-color: var(--white);
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.container-2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* place-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+.title h1 {
+  font-size: 10vmin;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ghost {
+  width: 20vmin;
+  height: 20vmin;
+  background-color: var(--white);
+  background-image: ghostwhite;
+  transform: translateX(100em) rotateZ(-90deg);
+  position: absolute;
+  border-radius: 50%;
+  top: -10%;
+  left: 30vw;
+  opacity: 0.9;
+  mix-blend-mode: exclusion;
+  animation: ghostMove 4s ease-out infinite;
+}
+
+.ghost-aboutme {
+  width: 72vmin;
+  height: 20vmin;
+  background-color: var(--white);
+  background-image: ghostwhite;
+  /* transform: translateX(100em) rotateZ(-90deg); */
+  position: absolute;
+  border-radius: 50px;
+  top: -10px;
+  left: -25px;
+  opacity: 0.9;
+  mix-blend-mode: exclusion;
+}
+
+@keyframes ghostMove {
+  0% {
+    transform: translateX(10em) rotateZ(-90deg);
+  }
+  50% {
+    transform: translateX(-10em) rotateZ(-90deg);
+  }
+  100% {
+    transform: translateX(10em) rotateZ(-90deg);
+  }
+}
+.ghost div {
+  position: absolute;
+  width: 20%;
+  background-color: var(--white);
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+
+.ghost div:nth-of-type(1) {
+  height: 7vmin;
+  left: 0;
+  bottom: -6vmin;
+  border-radius: 100%/0% 0% 50% 50%;
+}
+
+.ghost div:nth-of-type(2),
+.ghost div:nth-of-type(4) {
+  height: 4vmin;
+  left: 20%;
+  bottom: -3vmin;
+  border-radius: 100%/50% 50% 0% 0%;
+  background-color: transparent;
+}
+
+.ghost div:nth-of-type(3) {
+  height: 4vmin;
+  left: 40%;
+  bottom: -3.95vmin;
+  border-radius: 100%/0% 0% 60% 60%;
+  background-color: var(--white);
+}
+
+.ghost div:nth-of-type(4) {
+  left: 60%;
+}
+
+.ghost div:nth-of-type(5) {
+  height: 3vmin;
+  left: 80%;
+  bottom: -2.9vmin;
+  border-radius: 100%/0% 0% 70% 70%;
+  background-color: var(--white);
+}/*# sourceMappingURL=style.css.map */

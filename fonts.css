@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'fantomeregular';
+    src: url('fantome-regular-webfont.woff2') format('woff2'),
+        url('fantome-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'panameramedium';
+    src: url('panamera-medium-webfont.woff2') format('woff2'),
+        url('panamera-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'panameraregular';
+    src: url('panamera-regular-webfont.woff2') format('woff2'),
+        url('panamera-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'panamerathin';
+    src: url('panamera-thin-webfont.woff2') format('woff2'),
+        url('panamera-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'panamerablack';
+    src: url('panamera-black-webfont.woff2') format('woff2'),
+        url('panamera-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'panamerabold';
+    src: url('panamera-bold-webfont.woff2') format('woff2'),
+        url('panamera-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'panameralight';
+    src: url('panamera-light-webfont.woff2') format('woff2'),
+        url('panamera-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

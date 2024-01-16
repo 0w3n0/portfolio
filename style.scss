@@ -1,0 +1,415 @@
+@import 'typed';
+
+:root {
+    --var: blue;
+    --bleu: #9ca9bf;
+    --rouge: ghostwhite;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #efede1;
+    color: #7b7e81;
+    margin: 0;
+    min-height: 100vh;
+    /* Permet un défilement suffisant pour l'exemple */
+}
+
+// main {
+//     scroll-snap-type: y mandatory;
+//     overflow-y: scroll;
+//     height: 100vh;
+// }
+
+.p-pres{
+    color: ghostwhite;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: 'panamerabold';
+    text-align: center;
+    margin: 10vw 20vw 0;
+}
+
+h1 {
+    font-family: 'panamerabold';
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-family: 'panamerathin';
+    font-size: 1.5rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+a{
+    text-decoration: none;
+    color: #374151;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.box1 {
+    background-color: #3498db;
+}
+
+.box2 {
+    background-color: var(--bleu);
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: var(--couleur1);
+    }
+
+    49.99% {
+        background-color: var(--couleur1);
+        /* Couleur de départ pour box2 */
+    }
+
+    50% {
+        background-color: var(--couleur2);
+        /* Couleur de départ pour box2 */
+    }
+
+    90% {
+        background-color: var(--couleur2);
+    }
+
+    99% {
+        background-color: var(--couleur2);
+    }
+
+    100% {
+        background-color: var(--couleur1);
+        /* Couleur de départ pour box1 */
+    }
+}
+
+@keyframes bordercling {
+    0% {
+        border: 3px solid transparent;
+    }
+
+    5% {
+        border: 3px solid #374151;
+    }
+
+    10% {
+        border: 3px solid transparent;
+    }
+
+    15% {
+        border: 3px solid #374151;
+    }
+
+    20% {
+        border: 3px solid transparent;
+    }
+
+    25% {
+        border: 3px solid #374151;
+
+    }
+
+    30% {
+        border: 3px solid transparent;
+    }
+
+    35% {
+        border: 3px solid #374151;
+
+    }
+
+    40% {
+        border: 3px solid transparent;
+    }
+
+    45% {
+        border: 3px solid #374151;
+    }
+
+    50% {
+        border: 3px solid transparent;
+    }
+
+    100% {
+        border: 3px solid transparent;
+    }
+}
+
+@keyframes bordercling2 {
+    0% {
+        /* animation: borderClignote 5s infinite; */
+        border: 3px solid #374151;
+
+    }
+
+    50% {
+        /* animation: none; */
+    }
+
+    100% {
+        /* animation: none; */
+    }
+}
+
+@keyframes borderClignote2 {
+    0% {
+        border: 3px solid transparent;
+    }
+
+    100% {
+        border: 3px solid #374151;
+    }
+}
+
+@keyframes borderNone {
+    0% {
+        border: 3px solid;
+    }
+
+    100% {
+        border: none;
+    }
+
+    100% {
+        border: none;
+    }
+}
+.first-btn, .second-btn, .first-btn-r, .second-btn-r, .third-btn-r {
+    width: 40vw;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.first-btn-r, .second-btn-r, .third-btn-r {
+    background-color: ghostwhite;
+}
+
+.first-btn {
+    --couleur1: var(--bleu);
+    --couleur2: var(--rouge);
+    animation: changeColor 10s infinite, bordercling 10s infinite steps(1);
+    /* bordercling 10s infinite steps(1) */
+}
+
+.second-btn {
+    --couleur1: var(--rouge);
+    --couleur2: var(--bleu);
+    animation: changeColor 10s infinite, bordercling 10s infinite 5s steps(1);
+}
+
+// .first-btn-r {
+//     --couleur1: var(--bleu);
+//     --couleur2: var(--rouge);
+//     animation: changeColor 10s infinite, bordercling 10s infinite steps(1);
+//     /* bordercling 10s infinite steps(1) */
+// }
+
+// .second-btn-r {
+//     --couleur1: var(--rouge);
+//     --couleur2: var(--bleu);
+//     animation: changeColor 10s infinite, bordercling 10s infinite 5s steps(1);
+// }
+
+// .second-btn-r {
+//     --couleur1: var(--rouge);
+//     --couleur2: var(--bleu);
+//     animation: changeColor 10s infinite, bordercling 10s infinite 10s steps(1);
+// }
+
+.input-wrapper {
+    display: flex;
+    font-family: monospace;
+    font-size: 125%;
+    width: 70%;
+    flex-direction: column-reverse;
+
+    >input,
+    >.placeholder {
+        display: block;
+        appearance: none;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+    }
+
+    >.placeholder {
+        pointer-events: none;
+        @include typed("Web designer",
+            "Game developer",
+            "Web developer",
+            "Wanna take a look ? :)",
+            2,
+            (caret-width: 2px,
+                caret-space: 2px));
+    }
+
+    >input {
+
+        &:focus,
+        &:active {
+            +.placeholder {
+                display: none;
+            }
+        }
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+
+#test1 {
+	min-height: 100vh;
+	display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+	--bkg: #5eb3fd;
+	--white: #e7e6e6;
+
+	background-color: var(--white);
+	background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+    position: relative;
+}
+
+.container-2 {
+	width: 100%;
+    height: 100%;
+    display: flex;
+    /* place-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+
+.title h1 {
+	font-size: 10vmin;
+	font-weight: 900;
+	font-family: "Montserrat", sans-serif;
+	color: black;
+}
+
+.title{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ghost {
+    width: 20vmin;
+    height: 20vmin;
+	background-color: var(--white);
+	background-image: ghostwhite;
+	transform: translateX(100em) rotateZ(-90deg);
+	position: absolute;
+    border-radius: 50%;
+    top: -10%;
+    left: 30vw;
+	opacity: 0.9;
+	mix-blend-mode: exclusion;
+	animation: ghostMove 4s ease-out infinite;
+}
+
+.ghost-aboutme {
+    width: 72vmin;
+    height: 20vmin;
+    background-color: var(--white);
+    background-image: ghostwhite;
+    /* transform: translateX(100em) rotateZ(-90deg); */
+    position: absolute;
+    border-radius: 50px;
+    top: -10px;
+    left: -25px;
+    opacity: 0.9;
+    mix-blend-mode: exclusion;
+}
+
+@keyframes ghostMove {
+	0% {
+		transform: translateX(10em) rotateZ(-90deg);
+	}
+	50% {
+		transform: translateX(-10em) rotateZ(-90deg);
+	}
+    100% {
+		transform: translateX(10em) rotateZ(-90deg);
+	}
+}
+.ghost div {
+	position: absolute;
+	width: 20%;
+	background-color: var(--white);
+	background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+.ghost div:nth-of-type(1) {
+	height: 7vmin;
+	left: 0;
+	bottom: -6vmin;
+	border-radius: 100% / 0% 0% 50% 50%;
+}
+.ghost div:nth-of-type(2),
+.ghost div:nth-of-type(4) {
+	height: 4vmin;
+	left: 20%;
+	bottom: -3vmin;
+	border-radius: 100% / 50% 50% 0% 0%;
+	background-color: transparent;
+}
+.ghost div:nth-of-type(3) {
+	height: 4vmin;
+	left: 40%;
+	bottom: -3.95vmin;
+	border-radius: 100% / 0% 0% 60% 60%;
+	background-color: var(--white);
+}
+.ghost div:nth-of-type(4) {
+	left: 60%;
+}
+.ghost div:nth-of-type(5) {
+	height: 3vmin;
+	left: 80%;
+	bottom: -2.9vmin;
+	border-radius: 100% / 0% 0% 70% 70%;
+	background-color: var(--white);
+}
