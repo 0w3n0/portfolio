@@ -178,13 +178,19 @@ a {
     border: none;
   }
 }
-.first-btn, .second-btn, .first-btn-r, .second-btn-r, .third-btn-r {
+.first-btn,
+.second-btn,
+.first-btn-r,
+.second-btn-r,
+.third-btn-r {
   width: 40vw;
   height: 50px;
   border-radius: 10px;
 }
 
-.first-btn-r, .second-btn-r, .third-btn-r {
+.first-btn-r,
+.second-btn-r,
+.third-btn-r {
   background-color: ghostwhite;
 }
 
@@ -860,7 +866,7 @@ a {
   display: none;
 }
 
-#test1 {
+.test1 {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -898,6 +904,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .ghost {
@@ -981,4 +988,202 @@ a {
   bottom: -2.9vmin;
   border-radius: 100%/0% 0% 70% 70%;
   background-color: var(--white);
+}
+
+.p-rea {
+  font-family: monospace;
+  width: 80vw;
+  text-align: justify;
+}
+
+#mkplyrics {
+  height: 25%;
+}
+
+#TimeJourney,
+#LEAVENOW,
+#LyricS {
+  border-bottom: black solid 3px;
+}
+
+#TimeJourney img {
+  height: 45%;
+}
+
+.section-header {
+  text-align: center;
+  margin: 0 auto;
+  font: 400 1.7rem "Lato", sans-serif;
+  letter-spacing: 3px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#contact {
+  width: 100%;
+  overflow: hidden;
+}
+
+.contact-header {
+  color: #eee;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.contact-wrapper {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.contact-icons-list {
+  position: relative;
+  list-style-type: none;
+  text-align: center;
+  font-size: 30px;
+}
+
+.contact-icons-list li {
+  position: relative;
+  left: -13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 15px;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  background-color: #333;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-icons-list li:after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  opacity: 0;
+  box-shadow: 0 0 0 2px #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-icons-list li:hover {
+  background-color: #fff;
+}
+
+.contact-icons-list li:hover:after {
+  opacity: 1;
+  transform: scale(1.2);
+  transition-timing-function: cubic-bezier(0.3, 0.7, 0.1, 1.6);
+}
+
+.contact-icons-list li:hover .icon-font {
+  color: #111;
+}
+
+.icon-contact-perso {
+  height: 60%;
+  width: 60%;
+}
+
+.icon-font {
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright {
+  font: 200 14px "Oswald", sans-serif;
+  color: #444;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#ABTME {
+  color: #d0cfcf;
+  width: 72vmin;
+  height: 20vmin;
+  opacity: 0.9;
+  mix-blend-mode: exclusion;
+  background-color: var(--white);
+  border-radius: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 1224px) {
+  #section-all {
+    display: flex;
+    justify-content: center;
+  }
+  #section-all section {
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    border: #374151 1px solid;
+  }
+  #section-all section .p-rea {
+    font-family: monospace;
+    width: 20vw;
+    text-align: justify;
+  }
+  .contact-icons-list {
+    display: flex;
+  }
+  #desk-disp {
+    display: flex;
+  }
+  #desk-disp #welcome {
+    width: 50vw;
+    height: 100vh;
+  }
+  #desk-disp #aboutme {
+    width: 50vw;
+    height: 100vh;
+  }
+  #desk-disp .container-2 {
+    gap: 100px;
+  }
+  #desk-disp #ABTME {
+    width: 40vmin;
+    height: 10vmin;
+  }
+  #desk-disp #ABTME span {
+    font-size: 3rem;
+  }
+  .p-pres p {
+    width: 30vw;
+  }
+  @keyframes ghostMove {
+    0% {
+      transform: translateX(15em) rotateZ(-90deg);
+    }
+    50% {
+      transform: translateX(-30em) rotateZ(-90deg);
+    }
+    100% {
+      transform: translateX(15em) rotateZ(-90deg);
+    }
+  }
 }/*# sourceMappingURL=style.css.map */

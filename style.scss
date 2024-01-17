@@ -10,7 +10,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -28,7 +28,7 @@ body {
 //     height: 100vh;
 // }
 
-.p-pres{
+.p-pres {
     color: ghostwhite;
     font-size: 16px;
     text-transform: uppercase;
@@ -65,10 +65,12 @@ section {
     align-items: center;
     gap: 20px;
 }
-a{
+
+a {
     text-decoration: none;
     color: #374151;
 }
+
 .box {
     width: 100px;
     height: 100px;
@@ -210,13 +212,20 @@ a{
         border: none;
     }
 }
-.first-btn, .second-btn, .first-btn-r, .second-btn-r, .third-btn-r {
+
+.first-btn,
+.second-btn,
+.first-btn-r,
+.second-btn-r,
+.third-btn-r {
     width: 40vw;
     height: 50px;
     border-radius: 10px;
 }
 
-.first-btn-r, .second-btn-r, .third-btn-r {
+.first-btn-r,
+.second-btn-r,
+.third-btn-r {
     background-color: ghostwhite;
 }
 
@@ -294,25 +303,25 @@ a{
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
 
 
-#test1 {
-	min-height: 100vh;
-	display: flex;
+.test1 {
+    min-height: 100vh;
+    display: flex;
     justify-content: center;
     flex-direction: column;
 
-	--bkg: #5eb3fd;
-	--white: #e7e6e6;
+    --bkg: #5eb3fd;
+    --white: #e7e6e6;
 
-	background-color: var(--white);
-	background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    background-color: var(--white);
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
     padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+    margin: 0;
+    box-sizing: border-box;
     position: relative;
 }
 
 .container-2 {
-	width: 100%;
+    width: 100%;
     height: 100%;
     display: flex;
     /* place-items: center; */
@@ -323,32 +332,33 @@ a{
 }
 
 .title h1 {
-	font-size: 10vmin;
-	font-weight: 900;
-	font-family: "Montserrat", sans-serif;
-	color: black;
+    font-size: 10vmin;
+    font-weight: 900;
+    font-family: "Montserrat", sans-serif;
+    color: black;
 }
 
-.title{
+.title {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .ghost {
     width: 20vmin;
     height: 20vmin;
-	background-color: var(--white);
-	background-image: ghostwhite;
-	transform: translateX(100em) rotateZ(-90deg);
-	position: absolute;
+    background-color: var(--white);
+    background-image: ghostwhite;
+    transform: translateX(100em) rotateZ(-90deg);
+    position: absolute;
     border-radius: 50%;
     top: -10%;
     left: 30vw;
-	opacity: 0.9;
-	mix-blend-mode: exclusion;
-	animation: ghostMove 4s ease-out infinite;
+    opacity: 0.9;
+    mix-blend-mode: exclusion;
+    animation: ghostMove 4s ease-out infinite;
 }
 
 .ghost-aboutme {
@@ -366,50 +376,271 @@ a{
 }
 
 @keyframes ghostMove {
-	0% {
-		transform: translateX(10em) rotateZ(-90deg);
-	}
-	50% {
-		transform: translateX(-10em) rotateZ(-90deg);
-	}
+    0% {
+        transform: translateX(10em) rotateZ(-90deg);
+    }
+
+    50% {
+        transform: translateX(-10em) rotateZ(-90deg);
+    }
+
     100% {
-		transform: translateX(10em) rotateZ(-90deg);
-	}
+        transform: translateX(10em) rotateZ(-90deg);
+    }
 }
+
 .ghost div {
-	position: absolute;
-	width: 20%;
-	background-color: var(--white);
-	background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    position: absolute;
+    width: 20%;
+    background-color: var(--white);
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
 }
+
 .ghost div:nth-of-type(1) {
-	height: 7vmin;
-	left: 0;
-	bottom: -6vmin;
-	border-radius: 100% / 0% 0% 50% 50%;
+    height: 7vmin;
+    left: 0;
+    bottom: -6vmin;
+    border-radius: 100% / 0% 0% 50% 50%;
 }
+
 .ghost div:nth-of-type(2),
 .ghost div:nth-of-type(4) {
-	height: 4vmin;
-	left: 20%;
-	bottom: -3vmin;
-	border-radius: 100% / 50% 50% 0% 0%;
-	background-color: transparent;
+    height: 4vmin;
+    left: 20%;
+    bottom: -3vmin;
+    border-radius: 100% / 50% 50% 0% 0%;
+    background-color: transparent;
 }
+
 .ghost div:nth-of-type(3) {
-	height: 4vmin;
-	left: 40%;
-	bottom: -3.95vmin;
-	border-radius: 100% / 0% 0% 60% 60%;
-	background-color: var(--white);
+    height: 4vmin;
+    left: 40%;
+    bottom: -3.95vmin;
+    border-radius: 100% / 0% 0% 60% 60%;
+    background-color: var(--white);
 }
+
 .ghost div:nth-of-type(4) {
-	left: 60%;
+    left: 60%;
 }
+
 .ghost div:nth-of-type(5) {
-	height: 3vmin;
-	left: 80%;
-	bottom: -2.9vmin;
-	border-radius: 100% / 0% 0% 70% 70%;
-	background-color: var(--white);
+    height: 3vmin;
+    left: 80%;
+    bottom: -2.9vmin;
+    border-radius: 100% / 0% 0% 70% 70%;
+    background-color: var(--white);
+}
+
+.p-rea {
+    font-family: monospace;
+    width: 80vw;
+    text-align: justify;
+}
+
+#mkplyrics {
+    height: 25%;
+}
+
+#TimeJourney,
+#LEAVENOW,
+#LyricS {
+    border-bottom: black solid 3px;
+}
+
+#TimeJourney img {
+    height: 45%;
+}
+
+.section-header {
+    text-align: center;
+    margin: 0 auto;
+    font: 400 1.7rem 'Lato', sans-serif;
+    letter-spacing: 3px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#contact {
+    width: 100%;
+    overflow: hidden;
+}
+
+.contact-header {
+    color: #eee;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.contact-wrapper {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.contact-icons-list {
+    position: relative;
+    list-style-type: none;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+.contact-icons-list li {
+    position: relative;
+    left: -13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 15px;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    background-color: #333;
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+
+}
+
+.contact-icons-list li:after {
+    content: '';
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    opacity: 0;
+    box-shadow: 0 0 0 2px #fff;
+    transition: all .2s ease-in-out;
+}
+
+.contact-icons-list li:hover {
+    background-color: #fff;
+}
+
+.contact-icons-list li:hover:after {
+    opacity: 1;
+    transform: scale(1.2);
+    transition-timing-function: cubic-bezier(0.3, 0.7, 0.1, 1.6);
+}
+
+.contact-icons-list li:hover .icon-font {
+    color: #111;
+}
+
+.icon-contact-perso {
+    height: 60%;
+    width: 60%;
+}
+
+.icon-font {
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright {
+    font: 200 14px 'Oswald', sans-serif;
+    color: #444;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#ABTME {
+    color: #d0cfcf;
+    width: 72vmin;
+    height: 20vmin;
+    opacity: 0.9;
+    mix-blend-mode: exclusion;
+    background-color: var(--white);
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (min-width : 1224px) {
+    #section-all {
+        display: flex;
+        justify-content: center;
+
+        section {
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            width: 33%;
+            border: #374151 1px solid;
+
+            .p-rea {
+                font-family: monospace;
+                width: 20vw;
+                text-align: justify;
+            }
+        }
+    }
+
+    .contact-icons-list {
+        display: flex;
+    }
+
+    #desk-disp {
+        display: flex;
+
+        #welcome {
+            width: 50vw;
+            height: 100vh;
+        }
+
+        #aboutme {
+            width: 50vw;
+            height: 100vh;
+        }
+
+        .container-2 {
+            gap: 100px;
+        }
+
+        #ABTME {
+            width: 40vmin;
+            height: 10vmin;
+
+            span {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .p-pres p {
+        width: 30vw;
+    }
+
+    @keyframes ghostMove {
+        0% {
+            transform: translateX(15em) rotateZ(-90deg);
+        }
+
+        50% {
+            transform: translateX(-30em) rotateZ(-90deg);
+        }
+
+        100% {
+            transform: translateX(15em) rotateZ(-90deg);
+        }
+    }
 }
