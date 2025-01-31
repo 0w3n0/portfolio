@@ -20,6 +20,32 @@ body {
     margin: 0;
     min-height: 100vh;
     /* Permet un défilement suffisant pour l'exemple */
+    cursor: none;
+}
+
+
+.cursor {
+    display: none;
+}
+
+.cursor {
+    width: 10vmin;
+    height: 10vmin;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.9;
+    mix-blend-mode: exclusion;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    border: 4px solid transparent; /* Bordure transparente par défaut */
+    transition: border-color 0.2s ease-in-out, clip-path 0.2s ease-in-out;
+    clip-path: circle(45% at center); /* Trou au centre */
+}
+/* Effet lorsque le curseur survole un élément cliquable */
+.cursor.active {
+    border-color: red; /* Change la couleur de la bordure */
+    clip-path: circle(25% at center); /* Réduit le trou */
 }
 
 // main {
@@ -377,7 +403,7 @@ a {
 
 @keyframes ghostMove {
     0% {
-        transform: translateX(10em) rotateZ(-90deg);
+        transform: translateX(15em) rotateZ(-90deg);
     }
 
     50% {
@@ -385,7 +411,7 @@ a {
     }
 
     100% {
-        transform: translateX(10em) rotateZ(-90deg);
+        transform: translateX(15em) rotateZ(-90deg);
     }
 }
 
@@ -444,7 +470,7 @@ a {
 
 #TimeJourney,
 #LEAVENOW,
-#LyricS {
+#LyricS, #CatchyParty, #QBT, #ClownChase, #FlappyCat, #OmniscientVR {
     border-bottom: black solid 3px;
 }
 
@@ -487,12 +513,12 @@ a {
     list-style-type: none;
     text-align: center;
     font-size: 30px;
+    
 }
 
 
 .contact-icons-list li {
     position: relative;
-    left: -13px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -500,9 +526,10 @@ a {
     height: 80px;
     width: 80px;
     line-height: 80px;
-    background-color: #333;
+    background-color: #d9c6ff;
     border-radius: 50%;
     transition: all .2s ease-in-out;
+    z-index: 9999;
 
 }
 
@@ -576,9 +603,15 @@ a {
 }
 
 @media only screen and (min-width : 1224px) {
+    .cursor {
+        display: block;
+    }
+    
     #section-all {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        
 
         section {
             top: 100px;
@@ -594,6 +627,8 @@ a {
             }
         }
     }
+
+    
 
     .contact-icons-list {
         display: flex;
@@ -632,15 +667,15 @@ a {
 
     @keyframes ghostMove {
         0% {
-            transform: translateX(15em) rotateZ(-90deg);
+            transform: translateX(50em) rotateZ(-90deg);
         }
 
         50% {
-            transform: translateX(-30em) rotateZ(-90deg);
+            transform: translateX(-15em) rotateZ(-90deg);
         }
 
         100% {
-            transform: translateX(15em) rotateZ(-90deg);
+            transform: translateX(50em) rotateZ(-90deg);
         }
     }
 }
